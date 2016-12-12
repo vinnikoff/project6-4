@@ -3,7 +3,7 @@
  */
 import java.util.*;
 public class UserUtils extends User{
-    User[] uniqueUsers(User[] users){
+    static User[] uniqueUsers(User[] users){
 
         boolean mask[] = new boolean[users.length];
         int removeCount = 0;
@@ -30,12 +30,12 @@ public class UserUtils extends User{
                 result[j++] = users[i];
             }
         }
-        System.out.println("uniqueUsers: " + Arrays.toString(result));
+
 
         return result;
     }
 
-    User[] usersWithContitionalBalance(User[] users, int balance) {
+    static User[] usersWithContitionalBalance(User[] users, int balance) {
 
         boolean mask[] = new boolean[users.length];
         int removeCount = 0;
@@ -53,12 +53,12 @@ public class UserUtils extends User{
                 result[j++] = users[i];
             }
         }
-        System.out.println("usersWithContitionalBalance: " + Arrays.toString(result));
+       // System.out.println("usersWithContitionalBalance: " + Arrays.toString(result));
 
         return result;
     }
 
-    final User[] paySalaryToUsers(User[] users)
+    static final User[] paySalaryToUsers(User[] users)
     {
         for (int i = 0; i < users.length; i++) {
             int usersbalans=users[i].getBalance();
@@ -67,24 +67,24 @@ public class UserUtils extends User{
             users[i].setBalance(usersbalansnew);
         }
 
-        System.out.println("paySalaryToUsers: " + Arrays.toString(users));
+      //  System.out.println("paySalaryToUsers: " + Arrays.toString(users));
 
         return users;
 
     }
-    final long[] getUsersId(User[] users)
+    static final long[] getUsersId(User[] users)
     {
         long[] result = new long[users.length];
         for (int i = 0; i < users.length; i++) {
             result[i]=users[i].getId();
         }
 
-        System.out.println("getUsersId: " + Arrays.toString(result));
+       // System.out.println("getUsersId: " + Arrays.toString(result));
 
         return result;
     }
 
-    User[] deleteEmptyUsers(User[] users)
+    static User[] deleteEmptyUsers(User[] users)
     {
         boolean mask[] = new boolean[users.length];
         int removeCount = 0;
@@ -102,7 +102,7 @@ public class UserUtils extends User{
                 result[j++] = users[i];
             }
         }
-        System.out.println("deleteEmptyUsers: " + Arrays.toString(result));
+       // System.out.println("deleteEmptyUsers: " + Arrays.toString(result));
 
         return result;
     }
